@@ -1,4 +1,4 @@
-package com.globalredland.converter.ui.home;
+package com.globalredland.converter.ui.converter;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,20 +14,20 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.globalredland.converter.R;
 
-public class HomeFragment extends Fragment {
+public class ConverterFragment extends Fragment {
 
-    private HomeViewModel homeViewModel;
+    private ConverterViewModel converterViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-//        final TextView textView = root.findViewById(R.id.text_home);
-        homeViewModel.getText().observe(this, new Observer<String>() {
+        converterViewModel =
+                ViewModelProviders.of(this).get(ConverterViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_converter, container, false);
+        final TextView textView = root.findViewById(R.id.text_converter);
+        converterViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
-//                textView.setText(s);
+                textView.setText(s);
             }
         });
         return root;

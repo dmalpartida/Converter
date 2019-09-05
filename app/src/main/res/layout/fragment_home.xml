@@ -1,19 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <Button
+        android:id="@+id/button_unit_converter"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/home_button_shape"
+        android:drawableStart="@drawable/ic_oil"
+        android:drawablePadding="-36dp"
+        android:fontFamily="@font/titillium_web_light"
+        android:paddingLeft="30dp"
+
+        android:text="@string/home_button_convert"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/home_buttons_text"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/button_unit_equivalent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button_unit_equivalent"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/home_button_shape"
+        android:drawableStart="@drawable/ic_fuel"
+        android:drawablePadding="-10sp"
+        android:fontFamily="@font/titillium_web_light"
+        android:paddingLeft="25dp"
+        android:text="@string/home_button_equivalent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/home_buttons_text"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/titillium_web_extralight"
+        android:text="@string/home_text_choose2"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/text_white"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/button_unit_converter"
+        app:layout_constraintStart_toStartOf="@+id/button_unit_converter" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:fontFamily="@font/titillium_web_extralight"
+        android:text="@string/home_text_choose1"
+        android:textAllCaps="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@color/text_white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="@font/titillium_web"
+        android:lineSpacingExtra="-25sp"
+        android:text="@string/home_text_choose4"
+        android:textColor="@color/text_white"
+        android:textSize="55sp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="110dp"
+        android:layout_height="3dp"
+        android:layout_marginBottom="28dp"
+        android:background="#e60b0b"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintStart_toStartOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:fontFamily="@font/titillium_web_extralight"
+        android:text="@string/home_text_choose3"
+        android:textColor="@color/text_white"
+        android:textSize="42sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="@+id/textView4" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
