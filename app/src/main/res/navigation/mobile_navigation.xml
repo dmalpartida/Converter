@@ -12,6 +12,18 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/nav_converter"
+        android:name="com.globalredland.converter.ui.converter.ConverterFragment"
+        android:label="@string/menu_converter"
+        tools:layout="@layout/fragment_converter" />
+
+    <fragment
+        android:id="@+id/nav_equivalente"
+        android:name="com.globalredland.converter.ui.equivalente.EquivalenteFragment"
+        android:label="@string/menu_equivalente"
+        tools:layout="@layout/fragment_equivalente" />
+
+    <fragment
         android:id="@+id/nav_gallery"
         android:name="com.globalredland.converter.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
@@ -23,27 +35,4 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 
-    <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.globalredland.converter.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
-
-    <fragment
-        android:id="@+id/nav_share"
-        android:name="com.globalredland.converter.ui.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
-
-    <fragment
-        android:id="@+id/nav_send"
-        android:name="com.globalredland.converter.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
-
-    <fragment
-        android:id="@+id/nav_converter"
-        android:name="com.globalredland.converter.ui.converter.ConverterFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_converter" />
 </navigation>

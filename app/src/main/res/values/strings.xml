@@ -13,6 +13,8 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="menu_converter">Convertidor de Unidades</string>
+    <string name="menu_equivalente">Equivalente Energético</string>
 
     <string name="home_button_convert">Convertir Unidades</string>
     <string name="home_button_equivalent">Equivalente Energético</string>
