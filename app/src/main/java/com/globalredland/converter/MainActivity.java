@@ -2,6 +2,8 @@ package com.globalredland.converter;
 
 import android.os.Bundle;
 
+import com.globalredland.converter.database.AppDatabase;
+import com.globalredland.converter.database.FuelEntry;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -23,6 +25,7 @@ import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity {
 
+    private AppDatabase mDb;
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -52,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        mDb = AppDatabase.getInstance(getApplicationContext());
+        mDb.fuelDao().insertAllFuels(FuelEntry.populateData());
     }
 
     @Override

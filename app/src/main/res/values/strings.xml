@@ -25,6 +25,13 @@
     <string name="home_text_choose4">necesitas hacer hoy</string>
 
     <string name="convert_button">Convertir Unidades</string>
+    
+    <string name="converter_results">TU RESULTADO</string>
+    <string name="converter_units">Cantidad a convertir</string>
+    <string name="converter_units_hint"><font size="18">Ingrese cantidad</font></string>
+    <string name="converter_fuels_choose">Elige el combustible</string>
+    <string name="converter_units_choose">Elige la Unidad</string>
+    <string name="converter_button_text">Convertir Unidades</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

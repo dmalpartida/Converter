@@ -18,7 +18,6 @@
         android:drawablePadding="-36dp"
         android:fontFamily="@font/titillium_web_light"
         android:paddingLeft="30dp"
-
         android:text="@string/home_button_convert"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/home_buttons_text"
