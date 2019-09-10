@@ -44,12 +44,14 @@ public class ConverterFragment extends Fragment {
 
         button_disabled(root);
         hide_contents(root);
+        button_delete_hide(root);
         loadSpinnerFuel(root, db);
 
         Spinner spinner_fuel = root.findViewById(R.id.spinner_fuel);
         Spinner spinner_units_from = root.findViewById(R.id.spinner_units_from);
         Spinner spinner_units_to = root.findViewById(R.id.spinner_units_to);
         Button button_converter = root.findViewById(R.id.converter_button);
+        Button button_delete = root.findViewById(R.id.button_delete_data);
 
         spinner_fuel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -60,6 +62,8 @@ public class ConverterFragment extends Fragment {
                     show_units(root);
                 }
                 loadSpinnerUnits(root, db, i);
+                button_delete_hide(root);
+                button_disabled(root);
             }
 
             @Override
@@ -73,6 +77,7 @@ public class ConverterFragment extends Fragment {
                 Spinner spinner_units_to = root.findViewById(R.id.spinner_units_to);
                 if(!(spinner_units_to.getSelectedItemPosition() == 0)) {
                     button_enabled(root);
+                    button_delete_hide(root);
                 }
             }
 
@@ -87,6 +92,7 @@ public class ConverterFragment extends Fragment {
                 Spinner spinner_units_from = root.findViewById(R.id.spinner_units_from);
                 if(!(spinner_units_from.getSelectedItemPosition() == 0)) {
                     button_enabled(root);
+                    button_delete_hide(root);
                 }
             }
 
@@ -124,6 +130,19 @@ public class ConverterFragment extends Fragment {
                 ConvertirUnidades(itemClaseFrom, itemClaseTo, unitValue, root);
             }
         });
+        button_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                button_delete_hide(root);
+                hide_contents(root);
+
+                EditText converter_units = root.findViewById(R.id.converter_units);
+                Spinner spinner_fuels = root.findViewById(R.id.spinner_fuel);
+
+                converter_units.setText("");
+                spinner_fuels.setSelection(0);
+            }
+        });
 
         return root;
     }
@@ -151,6 +170,18 @@ public class ConverterFragment extends Fragment {
         Button button_convert = root.findViewById(R.id.converter_button);
         button_convert.setBackgroundResource(R.drawable.home_button_shape);
         button_convert.setEnabled(true);
+    }
+    private void button_delete_show(View root){
+        Button button_delete = root.findViewById(R.id.button_delete_data);
+        Button button_convert = root.findViewById(R.id.converter_button);
+        button_delete.setVisibility(View.VISIBLE);
+        button_convert.setVisibility(View.GONE);
+    }
+    private void button_delete_hide(View root){
+        Button button_delete = root.findViewById(R.id.button_delete_data);
+        Button button_convert = root.findViewById(R.id.converter_button);
+        button_delete.setVisibility(View.GONE);
+        button_convert.setVisibility(View.VISIBLE);
     }
 
     private void loadSpinnerFuel (View root, AppDatabase db) {
@@ -975,7 +1006,7 @@ public class ConverterFragment extends Fragment {
 
             }
 
-            // btnDeleteData.setVisibility(View.VISIBLE);
+            button_delete_show(root);
 
             String unitsFrom = NumberFormat.getInstance().format(Double.parseDouble(unitValue)) + " " + simbolo1 + " equivale a";
             NumberFormat f = NumberFormat.getInstance();

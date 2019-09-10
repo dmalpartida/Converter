@@ -23,13 +23,7 @@ public class EquivalenteFragment extends Fragment {
         equivalenteViewModel =
                 ViewModelProviders.of(this).get(EquivalenteViewModel.class);
         View root = inflater.inflate(R.layout.fragment_equivalente, container, false);
-        final TextView textView = root.findViewById(R.id.text_equivalente);
-        equivalenteViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }

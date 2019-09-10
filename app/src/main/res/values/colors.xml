@@ -12,9 +12,11 @@
     <color name="view_text_results">#ce1513</color>
     <color name="background_black">#000000</color>
     <color name="background_white">#FFFFFF</color>
+    <color name="background_disable">#dfdfdf</color>
 
     <color name="toolbar_background">#e60b0b</color>
 
     <color name="text_white">#ffffff</color>
+    <color name="text_red">#e60b0b</color>
 
 </resources>
