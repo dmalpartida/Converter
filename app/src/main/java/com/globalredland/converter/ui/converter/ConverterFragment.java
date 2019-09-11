@@ -124,8 +124,8 @@ public class ConverterFragment extends Fragment {
                 int itemPositionFrom =  spinner_units_from.getSelectedItemPosition();
                 int itemPositionTo = spinner_units_to.getSelectedItemPosition();
 
-                Integer itemClaseFrom = fuelUnits.get(itemPositionFrom).getId();
-                Integer itemClaseTo = fuelUnits.get(itemPositionTo).getId();
+                int itemClaseFrom = fuelUnits.get(itemPositionFrom).getId();
+                int itemClaseTo = fuelUnits.get(itemPositionTo).getId();
 
                 ConvertirUnidades(itemClaseFrom, itemClaseTo, unitValue, root);
             }
@@ -227,7 +227,7 @@ public class ConverterFragment extends Fragment {
     }
 
 
-    private void ConvertirUnidades(Integer Firstvalue, Integer Secondvalue, String unitValue, View root){
+    private void ConvertirUnidades(int Firstvalue, int Secondvalue, String unitValue, View root){
 
         Double totalConvertirUnidades = 0.0;
         String simbolo = "";
