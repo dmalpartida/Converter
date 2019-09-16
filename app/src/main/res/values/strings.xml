@@ -36,6 +36,14 @@
 
     <string name="equivalente_fuels_from">Elige el combustible de...</string>
     <string name="equivalente_fuels_to">Elige el combustible a...</string>
+    
+    <string name="our_team_title">REDLAN</string>
+    <string name="our_team_subtitle">Energy Project Expert</string>
+    <string name="our_team">NOSOTROS</string>
+    <string name="our_team_description_one">Somos un equipo de consultores con sólidos valores de integridad y cualidades profesionales, con un elevado nivel de compromiso con cada proyecto en el que participemos.</string>
+    <string name="our_team_description_two">Desarrollamos proyectos de infraestructura de Gas, Petróleo y Energía, desde su visualización hasta su ejecución, plantas de proceso y almacenamiento, plantas de Micro LNG, Redes de Transporte y distribución de gas, petróleo, entre otros.</string>
+    <string name="our_team_mail_title">ESCRÍBANOS</string>
+    <string name="our_team_mail">CONTACTO@GLOBALREDLAND.COM</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
