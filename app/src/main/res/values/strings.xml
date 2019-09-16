@@ -44,6 +44,11 @@
     <string name="our_team_description_two">Desarrollamos proyectos de infraestructura de Gas, Petróleo y Energía, desde su visualización hasta su ejecución, plantas de proceso y almacenamiento, plantas de Micro LNG, Redes de Transporte y distribución de gas, petróleo, entre otros.</string>
     <string name="our_team_mail_title">ESCRÍBANOS</string>
     <string name="our_team_mail">CONTACTO@GLOBALREDLAND.COM</string>
+    <string name="our_team_phone_title">LLÁMENOS</string>
+    <string name="our_team_phone_peru">PERÚ: 51 958 798 847</string>
+    <string name="our_team_phone_argentina">ARGENTINA: (+54 911) 4557 4299</string>
+    <string name="our_team_clock_title">HORARIO DE ATENCIÓN</string>
+    <string name="our_team_clock">HORARIO COMPLETO</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
