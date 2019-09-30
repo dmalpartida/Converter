@@ -1,5 +1,6 @@
 package com.globalredland.converter.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +17,7 @@ import androidx.lifecycle.ViewModelProviders;
 import com.globalredland.converter.R;
 import com.globalredland.converter.ui.converter.ConverterFragment;
 import com.globalredland.converter.ui.equivalente.EquivalenteFragment;
+import com.globalredland.converter.ui.intro.IntroActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeFragment extends Fragment {
@@ -27,6 +29,9 @@ public class HomeFragment extends Fragment {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+        Intent intent = new Intent(getContext(), IntroActivity.class);
+        startActivity(intent);
 
         final NavigationView navigationView = getActivity().findViewById(R.id.nav_view);
 

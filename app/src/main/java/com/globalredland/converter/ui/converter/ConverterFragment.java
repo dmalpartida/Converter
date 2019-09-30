@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.globalredland.converter.R;
 import com.globalredland.converter.database.AppDatabase;
@@ -31,12 +32,12 @@ import java.util.List;
 
 public class ConverterFragment extends Fragment {
 
-//    private ConverterViewModel converterViewModel;
+    private ConverterViewModel converterViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-//        converterViewModel =
-//                ViewModelProviders.of(this).get(ConverterViewModel.class);
+        converterViewModel =
+                ViewModelProviders.of(this).get(ConverterViewModel.class);
         final View root = inflater.inflate(R.layout.fragment_converter, container, false);
 
         Context context = getContext();

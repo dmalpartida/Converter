@@ -25,7 +25,7 @@
     <string name="home_text_choose4">necesitas hacer hoy</string>
 
     <string name="convert_button">Convertir Unidades</string>
-    
+
     <string name="converter_results">TU RESULTADO</string>
     <string name="converter_units">Cantidad a convertir</string>
     <string name="converter_units_hint"><font size="18">Ingrese cantidad</font></string>
@@ -36,7 +36,7 @@
 
     <string name="equivalente_fuels_from">Elige el combustible de...</string>
     <string name="equivalente_fuels_to">Elige el combustible a...</string>
-    
+
     <string name="our_team_title">REDLAN</string>
     <string name="our_team_subtitle">Energy Project Expert</string>
     <string name="our_team">NOSOTROS</string>
