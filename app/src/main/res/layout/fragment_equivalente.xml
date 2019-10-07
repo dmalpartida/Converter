@@ -6,21 +6,36 @@
     android:background="@drawable/background">
 
     <ScrollView
-        android:id="@+id/scroll_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview_equivalente"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:fontFamily="@font/titillium_web"
+                android:gravity="center"
+                android:text="@string/equivalente"
+                android:textColor="@color/text_white"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp" />
 
             <LinearLayout
                 android:id="@+id/linearLayout_Results"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:background="@color/background_white"
                 android:orientation="vertical"
@@ -31,9 +46,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
+                    android:background="@color/background_black"
                     android:fontFamily="@font/titillium_web"
                     android:gravity="center"
-                    android:background="@color/background_black"
                     android:text="@string/converter_results"
                     android:textColor="@color/text_white"
                     android:textSize="20sp" />
@@ -51,24 +66,24 @@
                     android:id="@+id/textview_units_to"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
+                    android:layout_marginTop="-10dp"
+                    android:layout_marginBottom="10dp"
                     android:fontFamily="@font/titillium_web"
                     android:gravity="center"
                     android:text="283.5"
-                    android:textSize="35sp"
                     android:textColor="@color/view_text_results"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="-10dp"/>
+                    android:textSize="35sp" />
 
                 <TextView
                     android:id="@+id/textview_units_to_symbol"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
+                    android:layout_marginTop="-25dp"
                     android:fontFamily="@font/titillium_web"
                     android:gravity="center"
                     android:text="PCs (GN) eqyuvake a"
-                    android:textSize="20sp"
                     android:textColor="@color/view_text_results"
-                    android:layout_marginTop="-25dp"/>
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -117,6 +132,7 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
                 android:background="#9800574B"
+                android:gravity="center"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -124,18 +140,18 @@
 
                 <TextView
                     android:id="@+id/textView6"
-                    android:layout_width="match_parent"
-                    android:layout_height="45dp"
+                    android:layout_width="300dp"
+                    android:layout_height="70dp"
                     android:fontFamily="@font/titillium_web"
                     android:gravity="center"
-                    android:text="@string/converter_fuels_choose"
+                    android:text="@string/equivalente_fuels_choose_from"
                     android:textColor="@color/text_white"
                     android:textSize="20sp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@color/edit_text_background" >
+                    android:background="@color/edit_text_background">
 
                     <Spinner
                         android:id="@+id/spinner_fuel_from"
@@ -150,8 +166,8 @@
                     android:id="@+id/LinearLayout_units_from"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:background="@color/edit_text_background" >
+                    android:background="@color/edit_text_background"
+                    android:orientation="vertical">
 
                     <View
                         android:id="@+id/view"
@@ -179,8 +195,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="16dp"
-                android:orientation="vertical"
                 android:background="#9800574B"
+                android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/LinearLayout_fuel">
@@ -191,21 +207,21 @@
                     android:layout_height="45dp"
                     android:fontFamily="@font/titillium_web"
                     android:gravity="center"
-                    android:text="@string/converter_fuels_choose"
+                    android:text="@string/equivalente_fuels_choose_to"
                     android:textColor="@color/text_white"
                     android:textSize="20sp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/edit_text_background" >
+                    android:background="@color/edit_text_background">
 
                     <Spinner
                         android:id="@+id/spinner_fuel_to"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:paddingLeft="15dp"
-                        android:paddingRight="15dp"/>
+                        android:paddingRight="15dp" />
 
                 </RelativeLayout>
 
@@ -213,8 +229,8 @@
                     android:id="@+id/LinearLayout_units_to"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@color/edit_text_background" >
+                    android:background="@color/edit_text_background"
+                    android:orientation="vertical">
 
                     <View
                         android:id="@+id/view2"
@@ -236,23 +252,6 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/converter_button"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="48dp"
-                android:layout_marginEnd="16dp"
-                android:background="@drawable/button_shape_disabled"
-                android:fontFamily="@font/titillium_web"
-                android:text="@string/converter_button_text"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textColor="@color/text_white"
-                android:textSize="22sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/LinearLayout_fuel_to" />
-
-            <Button
                 android:id="@+id/button_delete_data"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
@@ -269,12 +268,31 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/LinearLayout_fuel_to" />
 
+            <Button
+                android:id="@+id/converter_button"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/button_shape_disabled"
+                android:fontFamily="@font/titillium_web"
+                android:text="@string/equivalente_button_text"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/text_white"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LinearLayout_fuel_to" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"></LinearLayout>
+
         </LinearLayout>
 
+
     </ScrollView>
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

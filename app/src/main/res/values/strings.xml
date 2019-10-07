@@ -13,7 +13,7 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
-    <string name="menu_converter">Convertidor de Unidades</string>
+    <string name="menu_converter">Conversor de Unidades</string>
     <string name="menu_equivalente">Equivalente Energético</string>
 
     <string name="home_button_convert">Convertir Unidades</string>
@@ -26,14 +26,19 @@
 
     <string name="convert_button">Convertir Unidades</string>
 
+    <string name="converter">CONVERSOR DE UNIDADES</string>
     <string name="converter_results">TU RESULTADO</string>
     <string name="converter_units">Cantidad a convertir</string>
     <string name="converter_units_hint"><font size="18">Ingrese cantidad</font></string>
-    <string name="converter_fuels_choose">Elige el combustible</string>
+    <string name="converter_fuels_choose">Elige el producto</string>
     <string name="converter_units_choose">Elige la unidad</string>
-    <string name="converter_button_text">Convertir Unidades</string>
+    <string name="converter_button_text">Convertir</string>
     <string name="converter_button_delete">Borrar datos</string>
+    <string name="equivalente_fuels_choose_from">Elige el producto que quieres convertir</string>
+    <string name="equivalente_fuels_choose_to">Elige el sustituto energético</string>
+    <string name="equivalente_button_text">Hallar equivalente</string>
 
+    <string name="equivalente">EQUIVALENTE ENERGÉTICO</string>
     <string name="equivalente_fuels_from">Elige el combustible de...</string>
     <string name="equivalente_fuels_to">Elige el combustible a...</string>
 

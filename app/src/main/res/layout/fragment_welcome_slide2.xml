@@ -20,7 +20,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/convertidor"
+        android:src="@drawable/tutorial_conversor"
         app:layout_constraintBottom_toBottomOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +34,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/titillium_web"
-        android:text="¡CONVERTIDOR DE UNIDADES!"
+        android:text="¡CONVERSOR DE UNIDADES!"
         android:textColor="@color/text_red"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

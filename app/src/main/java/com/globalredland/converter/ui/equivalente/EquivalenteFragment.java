@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -58,8 +59,8 @@ public class EquivalenteFragment extends Fragment {
         spinner_fuel_from.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
-                imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+//                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
+//                imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
                 if (i != 0) {
                     show_units_from(root);
                 }
@@ -76,10 +77,12 @@ public class EquivalenteFragment extends Fragment {
         spinner_units_from.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
                 if (i != 0){
                     button_delete_hide(root);
                     show_fuels_to(root);
                 }
+
             }
 
             @Override
@@ -469,43 +472,43 @@ public class EquivalenteFragment extends Fragment {
                     break;
                 case 47: //PCs
                     totalConvertirEquivalentes = Parametro / ArrayParam.get(1);
-                    simbolo = "PCs de GN.";
+                    simbolo = "PCs equivalentes de GN.";
                     break;
                 case 48: //MPCs
                     totalConvertirEquivalentes = (Parametro / ArrayParam.get(1)) / 1000;
-                    simbolo = "MPCs de GN.";
+                    simbolo = "MPCs equivalentes de GN.";
                     break;
                 case 49: //MMPCs
                     totalConvertirEquivalentes = (Parametro / ArrayParam.get(1)) / 1000000;
-                    simbolo = "MMPCs de GN.";
+                    simbolo = "MMPCs equivalentes de GN.";
                     break;
                 case 50: //m3s
                     totalConvertirEquivalentes 	= (Parametro / ArrayParam.get(1)) * Math.pow((12 * 0.0254), 3);
-                    simbolo = "m3s de GN.";
+                    simbolo = "m3s equivalentes de GN.";
                     break;
                 case 999: //Mm3s
                     totalConvertirEquivalentes = ((Parametro / ArrayParam.get(1)) * Math.pow((12 * 0.0254), 3)) / 600 / 1000;
-                    simbolo = "Mm3s de GNL.";
+                    simbolo = "Mm3s equivalentes de GNL.";
                     break;
                 case 51: //m3
                     totalConvertirEquivalentes = ((Parametro / ArrayParam.get(1)) * Math.pow((12 * 0.0254), 3)) / 600;
-                    simbolo = "m3 de GNL.";
+                    simbolo = "m3 equivalentes de GNL.";
                     break;
                 case 52: //PC
                     totalConvertirEquivalentes = ((Parametro / ArrayParam.get(1)) * Math.pow((12 * 0.0254), 3)) / 600 * 35.314;
-                    simbolo = "PC de GNL.";
+                    simbolo = "PC equivalentes de GNL.";
                     break;
                 case 53: //gal
                     totalConvertirEquivalentes = ((Parametro / ArrayParam.get(1)) * Math.pow((12 * 0.0254), 3)) / 600 * 264.17;
-                    simbolo = "gal. de GNL.";
+                    simbolo = "gal. equivalentes de GNL.";
                     break;
                 case 54: //kg
                     totalConvertirEquivalentes = ((Parametro / ArrayParam.get(1)) * Math.pow((12 * 0.0254), 3)) / 600 * 450;
-                    simbolo = "kg. de GNL.";
+                    simbolo = "kg. equivalentes de GNL.";
                     break;
                 case 55: //TON
                     totalConvertirEquivalentes = ((Parametro / ArrayParam.get(1)) * Math.pow((12 * 0.0254), 3)) / 600 * 450 / 1000;
-                    simbolo = "Ton. de GNL.";
+                    simbolo = "Ton. equivalentes de GNL.";
                     break;
                 case 56: //boe
                     totalConvertirEquivalentes = Parametro / ArrayParam.get(0) / 42;
@@ -551,7 +554,7 @@ public class EquivalenteFragment extends Fragment {
                 // Petroleo
                 case 84: //Galones
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(0);
-                    simbolo = "gal. de Petróleo";
+                    simbolo = "gal. equivalentes de Petróleo";
                     break;
                 case 85: //Litros
                     if(Firstvalue == 86){
@@ -560,29 +563,29 @@ public class EquivalenteFragment extends Fragment {
                     else{
                         totalConvertirEquivalentes =  Parametro / ArrayParam.get(0) / 0.264172051241558;
                     }
-                    simbolo = "L. de Petróleo";
+                    simbolo = "L. equivalentes de Petróleo";
                     break;
                 case 86: // metros cúbicos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(0) / 264;
-                    simbolo = "m3 de Petróleo";
+                    simbolo = "m3 equivalentes de Petróleo";
                     break;
                 case 87: // Kilogramos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(0) / 0.301314487632509;
-                    simbolo = "Kg. de Petróleo";
+                    simbolo = "Kg. equivalentes de Petróleo";
                     break;
                 case 88: //Toneladas
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(0) / 301.314487632509;
-                    simbolo = "Ton. de Petróleo";
+                    simbolo = "Ton. equivalentes de Petróleo";
                     break;
                 case 89: //Barrilees
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(0) / 42;
-                    simbolo = "Bls de Petróleo (BOE)";
+                    simbolo = "Bls. equivalentes de Petróleo (BOE)";
                     break;
 
                 // Gasolina 95
                 case 90: //Galones
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(2);
-                    simbolo = "gal. de Gasolina 95";
+                    simbolo = "gal. equivalentes de Gasolina 95";
                     break;
                 case 91: //Litros
                     if(Firstvalue == 92){
@@ -591,29 +594,29 @@ public class EquivalenteFragment extends Fragment {
                     else{
                         totalConvertirEquivalentes =  Parametro / ArrayParam.get(2) / 0.264172051241558;
                     }
-                    simbolo = "L. de Gasolina 95";
+                    simbolo = "L. equivalentes de Gasolina 95";
                     break;
                 case 92: // metros cúbicos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(2) / 264;
-                    simbolo = "m3. de Gasolina 95";
+                    simbolo = "m3. equivalentes de Gasolina 95";
                     break;
                 case 93: // Kilogramos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(2) / 0.388235294117647;
-                    simbolo = "Kg. de Gasolina 95";
+                    simbolo = "Kg. equivalentes de Gasolina 95";
                     break;
                 case 94: //Toneladas
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(2) / 388.235294117647;
-                    simbolo = "Ton. de Gasolina 95";
+                    simbolo = "Ton. equivalentes de Gasolina 95";
                     break;
                 case 95: //Barrilees
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(2) / 42;
-                    simbolo = "Bls. de Gasolina 95";
+                    simbolo = "Bls. equivalentes de Gasolina 95";
                     break;
 
                 // Diesel
                 case 96: //Galones
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(3);
-                    simbolo = "gal. de Diesel";
+                    simbolo = "gal. equivalentes de Diesel";
                     break;
                 case 97: //Litros
                     if(Firstvalue == 98){
@@ -622,29 +625,29 @@ public class EquivalenteFragment extends Fragment {
                     else{
                         totalConvertirEquivalentes =  Parametro / ArrayParam.get(3) / 0.264172051241558;
                     }
-                    simbolo = "L. de Diesel";
+                    simbolo = "L. equivalentes de Diesel";
                     break;
                 case 98: // metros cúbicos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(3) / 264;
-                    simbolo = "m3 de Diesel";
+                    simbolo = "m3 equivalentes de Diesel";
                     break;
                 case 99: // Kilogramos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(3) / 0.317307692307692;
-                    simbolo = "Kg. de Diesel";
+                    simbolo = "Kg. equivalentes de Diesel";
                     break;
                 case 100: //Toneladas
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(3) /  317.307692307692;
-                    simbolo = "Ton. de Diesel";
+                    simbolo = "Ton. equivalentes de Diesel";
                     break;
                 case 101: //Barrilees
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(3) / 42;
-                    simbolo = "Bls. de Diesel";
+                    simbolo = "Bls. equivalentes de Diesel";
                     break;
 
                 // Kerosene
                 case 108: //Galones
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(4);
-                    simbolo = "gal. de Kerosene";
+                    simbolo = "gal. equivalentes de Kerosene";
                     break;
                 case 109: //Litros
                     if(Firstvalue == 110){
@@ -653,29 +656,29 @@ public class EquivalenteFragment extends Fragment {
                     else{
                         totalConvertirEquivalentes =  Parametro / ArrayParam.get(4) / 0.264172051241558;
                     }
-                    simbolo = "L. de Kerosene";
+                    simbolo = "L. equivalentes de Kerosene";
                     break;
                 case 110: // metros cúbicos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(4) / 264;
-                    simbolo = "m3 de Kerosene";
+                    simbolo = "m3 equivalentes de Kerosene";
                     break;
                 case 111: // Kilogramos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(4) / 0.352;
-                    simbolo = "Kg. de Kerosene";
+                    simbolo = "Kg. equivalentes de Kerosene";
                     break;
                 case 112: //Toneladas
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(4) / 352;
-                    simbolo = "Ton. de Kerosene";
+                    simbolo = "Ton. equivalentes de Kerosene";
                     break;
                 case 113: //Barrilees
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(4) / 42;
-                    simbolo = "Bls. de Kerosene";
+                    simbolo = "Bls. equivalentes de Kerosene";
                     break;
 
                 // Propano
                 case 114: //Galones
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(5);
-                    simbolo = "gal. de Propano";
+                    simbolo = "gal. equivalentes de Propano";
                     break;
                 case 115: //Litros
                     if(Firstvalue == 116){
@@ -684,15 +687,15 @@ public class EquivalenteFragment extends Fragment {
                     else{
                         totalConvertirEquivalentes =  Parametro / ArrayParam.get(5) / 0.264172051241558;
                     }
-                    simbolo = "L. de Propano";
+                    simbolo = "L. equivalentes de Propano";
                     break;
                 case 116: // metros cúbicos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(5) / 264;
-                    simbolo = "m3 de Propano";
+                    simbolo = "m3 equivalentes de Propano";
                     break;
                 case 117: // Kilogramos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(5) / 0.517647058823529;
-                    simbolo = "Kg. de Propano";
+                    simbolo = "Kg. equivalentes de Propano";
                     break;
                 case 118: //Toneladas
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(5) / 517.647058823529;
@@ -700,13 +703,13 @@ public class EquivalenteFragment extends Fragment {
                     break;
                 case 119: //Barrilees
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(5) / 42;
-                    simbolo = "Bls. de Propano";
+                    simbolo = "Bls. equivalentes de Propano";
                     break;
 
                 // Butano
                 case 120: //Galones
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(6);
-                    simbolo = "gal. de Butano";
+                    simbolo = "gal. equivalentes de Butano";
                     break;
                 case 121: //Litros
                     if(Firstvalue == 122){
@@ -715,30 +718,30 @@ public class EquivalenteFragment extends Fragment {
                     else{
                         totalConvertirEquivalentes =  Parametro / ArrayParam.get(6) / 0.264172051241558;
                     }
-                    simbolo = "L. de Butano";
+                    simbolo = "L. equivalentes de Butano";
                     break;
                 case 122: // metros cúbicos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(6) / 264;
-                    simbolo = "m3 de Butano";
+                    simbolo = "m3 equivalentes de Butano";
                     break;
                 case 123: // Kilogramos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(6) / 0.45360824742268;
-                    simbolo = "Kg. de Butano";
+                    simbolo = "Kg. equivalentes de Butano";
                     break;
                 case 124: //Toneladas
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(6) / 453.60824742268;
-                    simbolo = "Ton. de Butano";
+                    simbolo = "Ton. equivalentes de Butano";
                     break;
                 case 125: //Barrilees
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(6) / 42;
-                    simbolo = "Bls. de Butano";
+                    simbolo = "Bls. equivalentes de Butano";
                     break;
 
 
                 // GLP
                 case 126: //Galones
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(7);
-                    simbolo = "gal. de GLP";
+                    simbolo = "gal. equivalentes de GLP";
                     break;
                 case 127: //Litros
                     if(Firstvalue == 128){
@@ -747,29 +750,29 @@ public class EquivalenteFragment extends Fragment {
                     else{
                         totalConvertirEquivalentes =  Parametro / ArrayParam.get(7) / 0.264172051241558;
                     }
-                    simbolo = "L. de GLP";
+                    simbolo = "L. equivalentes de GLP";
                     break;
                 case 128: // metros cúbicos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(7) / 264;
-                    simbolo = "m3 de GLP";
+                    simbolo = "m3 equivalentes de GLP";
                     break;
                 case 129: // Kilogramos
                     totalConvertirEquivalentes =  Parametro * 514.2 / 264.172 / ArrayParam.get(7);
-                    simbolo = "Kg. de GLP";
+                    simbolo = "Kg. equivalentes de GLP";
                     break;
                 case 130: //Toneladas
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(7) / 509.65250965251;
-                    simbolo = "Ton. de GLP";
+                    simbolo = "Ton. equivalentes de GLP";
                     break;
                 case 131: //Barrilees
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(7) / 42;
-                    simbolo = "Bls. de GLP";
+                    simbolo = "Bls. equivalentes de GLP";
                     break;
 
                 // Residual 6
                 case 132: //Galones
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(8);
-                    simbolo = "gal. de Residual 6";
+                    simbolo = "gal. equivalentes de Residual 6";
                     break;
                 case 133: //Litros
                     if(Firstvalue == 134){
@@ -778,29 +781,29 @@ public class EquivalenteFragment extends Fragment {
                     else{
                         totalConvertirEquivalentes =  Parametro / ArrayParam.get(8) / 0.264172051241558;
                     }
-                    simbolo = "L. de Residual 6";
+                    simbolo = "L. equivalentes de Residual 6";
                     break;
                 case 134: // metros cúbicos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(8) / 264;
-                    simbolo = "m3 de Residual 6";
+                    simbolo = "m3 equivalentes de Residual 6";
                     break;
                 case 135: // Kilogramos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(8) / 0.272164948453608;
-                    simbolo = "Kg. de Residual 6";
+                    simbolo = "Kg. equivalentes de Residual 6";
                     break;
                 case 136: //Toneladas
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(8) / 272.164948453608;
-                    simbolo = "Ton. de Residual 6";
+                    simbolo = "Ton. equivalentes de Residual 6";
                     break;
                 case 137: //Barrilees
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(8) / 42;
-                    simbolo = "Bls de Residual 6";
+                    simbolo = "Bls. equivalentes de Residual 6";
                     break;
 
                 // Residual 500
                 case 138: //Galones
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(9);
-                    simbolo = "gal. de Residual 500";
+                    simbolo = "gal. equivalentes de Residual 500";
                     break;
                 case 139: //Litros
                     if(Firstvalue == 140){
@@ -809,51 +812,47 @@ public class EquivalenteFragment extends Fragment {
                     else{
                         totalConvertirEquivalentes =  Parametro / ArrayParam.get(9) / 0.264172051241558;
                     }
-                    simbolo = "L. de Residual 500";
+                    simbolo = "L. equivalentes de Residual 500";
                     break;
                 case 140: // metros cúbicos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(9) / 264;
-                    simbolo = "m3 de Residual 500";
+                    simbolo = "m3 equivalentes de Residual 500";
                     break;
                 case 141: // Kilogramos
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(9) / 0.269387755102041;
-                    simbolo = "Kg. de Residual 500";
+                    simbolo = "Kg. equivalentes de Residual 500";
                     break;
                 case 142: //Toneladas
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(9) / 269.387755102041;
-                    simbolo = "Ton. de Residual 500";
+                    simbolo = "Ton. equivalentes de Residual 500";
                     break;
                 case 143: //Barrilees
                     totalConvertirEquivalentes =  Parametro / ArrayParam.get(9) / 42;
-                    simbolo = "Bls. de Residual 500";
+                    simbolo = "Bls. equivalentes de Residual 500";
                     break;
             }
+
+            button_delete_show(root);
+
+
+            NumberFormat f = NumberFormat.getInstance();
+            f.setMaximumFractionDigits(2);
+            String unitsFrom = NumberFormat.getInstance().format(Double.parseDouble(unitValue)) + " " + simbolo1 + " equivale a";
+
+            TextView convert_units_from = root.findViewById(R.id.textview_units_from);
+            TextView convert_units_to = root.findViewById(R.id.textview_units_to);
+            TextView convert_units_to_symbol = root.findViewById(R.id.textview_units_to_symbol);
+
+            convert_units_from.setText(Html.fromHtml(unitsFrom));
+            convert_units_to.setText(f.format(totalConvertirEquivalentes));
+            convert_units_to_symbol.setText(simbolo);
+
+            show_results(root);
+
+
         }
-
-        button_delete_show(root);
-
-
-        NumberFormat f = NumberFormat.getInstance();
-        f.setMaximumFractionDigits(2);
-        String unitsFrom = NumberFormat.getInstance().format(Double.parseDouble(unitValue)) + " " + simbolo1 + " equivale a";
-
-        TextView convert_units_from = root.findViewById(R.id.textview_units_from);
-        TextView convert_units_to = root.findViewById(R.id.textview_units_to);
-        TextView convert_units_to_symbol = root.findViewById(R.id.textview_units_to_symbol);
-
-        convert_units_from.setText(Html.fromHtml(unitsFrom));
-        convert_units_to.setText(f.format(totalConvertirEquivalentes));
-        convert_units_to_symbol.setText(simbolo);
-
-        show_results(root);
-
-//        NumberFormat f = NumberFormat.getInstance();
-//        f.setMaximumFractionDigits(2);
-//        String unitsFrom = f.format(Double.parseDouble(unitValue)) + " " + simbolo1 + " equivale a";
-//
-//        tvUnitsConvertFrom.setText(Html.fromHtml(unitsFrom));
-//
-//        tvResultadoEquivalente.setText(f.format(totalConvertirEquivalentes));
-//        tvResultadoEquivalenteLabel.setText(simbolo);
+        else
+            Toast.makeText(getActivity(), "Ingrese cantidad a convertir", Toast.LENGTH_LONG).show();
     }
+
 }

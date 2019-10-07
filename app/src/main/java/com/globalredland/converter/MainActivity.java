@@ -1,15 +1,20 @@
 package com.globalredland.converter;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.globalredland.converter.database.AppDatabase;
 import com.globalredland.converter.database.FuelEntry;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.globalredland.converter.ui.intro.IntroActivity;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -18,11 +23,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppDatabase mDb;
     private AppBarConfiguration mAppBarConfiguration;
+
+    String prevStarted = "prevStarted";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
 //        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -55,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
 
         mDb = AppDatabase.getInstance(getApplicationContext());
         mDb.fuelDao().insertAllFuels(FuelEntry.populateData());
+
+//        Intent intent = new Intent(this, IntroActivity.class);
+//        startActivity(intent);
+        navigationView.setNavigationItemSelectedListener(this);
+
     }
 
     @Override
@@ -64,10 +80,41 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
     @Override
     public boolean onSupportNavigateUp() {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        SharedPreferences sharedpreferences = getSharedPreferences(getString(R.string.app_name), Context.MODE_PRIVATE);
+        if (!sharedpreferences.getBoolean(prevStarted, false)) {
+
+            Intent intent = new Intent(this, IntroActivity.class);
+            startActivity(intent);
+
+            SharedPreferences.Editor editor = sharedpreferences.edit();
+            editor.putBoolean(prevStarted, Boolean.TRUE);
+            editor.apply();
+        }
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+        int id = menuItem.getItemId();
+
+        if (id == R.id.nav_slideshow){
+            Intent intent = new Intent(this, IntroActivity.class);
+            startActivity(intent);
+        }
+//            Toast.makeText(this, "Clicked tutorial", Toast.LENGTH_LONG).show();
+
+        return true;
     }
 }
