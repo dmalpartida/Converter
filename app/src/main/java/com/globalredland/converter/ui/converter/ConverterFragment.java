@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -57,8 +58,8 @@ public class ConverterFragment extends Fragment {
         spinner_fuel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
-                imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+//                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
+//                imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
                 if (i != 0) {
                     show_units(root);
                 }
@@ -1009,7 +1010,7 @@ public class ConverterFragment extends Fragment {
 
             button_delete_show(root);
 
-            String unitsFrom = NumberFormat.getInstance().format(Double.parseDouble(unitValue)) + " " + simbolo1 + " equivale a";
+            String unitsFrom = NumberFormat.getInstance().format(Double.parseDouble(unitValue)) + " " + simbolo1 + " es igual a";
             NumberFormat f = NumberFormat.getInstance();
             f.setMaximumFractionDigits(2);
             String unitsTo = f.format(totalConvertirUnidades)  + " <small><small>" + simbolo + "</small></small>";
@@ -1021,6 +1022,9 @@ public class ConverterFragment extends Fragment {
             convert_units_to.setText(Html.fromHtml(unitsTo));
 
             show_results(root);
+
+            ScrollView mainScrollView = root.findViewById(R.id.mainScrollView);
+            mainScrollView.fullScroll(ScrollView.FOCUS_UP);
         }
         else
             Toast.makeText(getActivity(), "Ingrese cantidad a convertir", Toast.LENGTH_LONG).show();

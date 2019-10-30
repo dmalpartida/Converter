@@ -12,20 +12,22 @@
     <View
         android:id="@+id/view3"
         android:layout_width="match_parent"
-        android:layout_height="480dp"
+        android:layout_height="0dp"
         android:background="#D81B60"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHeight_percent="0.57"/>
 
     <ImageView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:src="@drawable/welcome_phone"
         app:layout_constraintBottom_toBottomOf="@+id/view3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.4" />
 
     <ImageView
         android:layout_width="100dp"
@@ -41,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:fontFamily="@font/titillium_web"
         android:text="¡BIENVENIDO AL CONVERTIDOR ENERGÉTICO!"
@@ -54,12 +56,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/titillium_web"
         android:gravity="center"
-        android:text="Convierta unidades de volumen, energía o peso; a su equivalente energético en las unidades que requiera, sean en Toneladas, Millones de BTU, Barriles o Mw-hr"
+        android:text="Esta herramienta le permite: 1) Calcular unidades de energía, volumen o peso y 2) Calcular el equivalente energético de cualquier producto al del sustituto que quieras convertir."
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"

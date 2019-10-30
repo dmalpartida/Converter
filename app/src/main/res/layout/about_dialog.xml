@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="#2f333f"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/txtClose"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:textColor="@color/text_white"
+        android:text="X"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_gravity="end"
+        android:background="@drawable/circlebackground"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="232dp"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:textColor="@color/text_white"
+            android:fontFamily="@font/titillium_web_light"
+            android:text="CONVERSOR DE UNIDADES 1.0"
+            android:textSize="22sp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_white"
+            android:fontFamily="@font/titillium_web_light"
+            android:text="Copyright © 2019"
+            android:layout_marginTop="0dp"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_white"
+            android:fontFamily="@font/titillium_web_light"
+            android:textSize="15sp"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Con la colaboración de:" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_white"
+            android:fontFamily="@font/titillium_web_light"
+            android:textSize="15sp"
+            android:layout_marginTop="0dp"
+            android:layout_gravity="center_horizontal"
+            android:text="Eduardo Torres" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_white"
+            android:fontFamily="@font/titillium_web_light"
+            android:text="Desarrollado por:  David Malpartida"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_white"
+            android:fontFamily="@font/titillium_web_light"
+            android:layout_gravity="center_horizontal"
+            android:text="Correo:  dmalpartida@gmail.com"
+            android:layout_marginTop="0dp" />
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtLink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_white"
+        android:fontFamily="@font/titillium_web_light"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:text="@string/visit_site" />
+
+
+    <Button
+        android:id="@+id/btnClose"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/titillium_web"
+        android:text="Cerrar"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/text_white"
+        android:background="@drawable/button_border"/>
+
+</LinearLayout>

@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -428,47 +429,47 @@ public class EquivalenteFragment extends Fragment {
             switch(Secondvalue){
                 case 36: //Btu
                     totalConvertirEquivalentes = Parametro;
-                    simbolo = "Btu";
+                    simbolo = "Btu equiv. de energía eléctrica";
                     break;
                 case 37: //kBtu
                     totalConvertirEquivalentes = Parametro / 1000;
-                    simbolo = "kBtu";
+                    simbolo = "kBtu equiv. de energía eléctrica";
                     break;
                 case 38: //MillionBtu
                     totalConvertirEquivalentes = (Parametro / 1000)/1000;
-                    simbolo = "MBtu";
+                    simbolo = "MBtu equiv. de energía eléctrica";
                     break;
                 case 39: //Joule
                     totalConvertirEquivalentes = Parametro * 1055.06;
-                    simbolo = "J";
+                    simbolo = "J equiv. de energía eléctrica";
                     break;
                 case 40: //KiloJoule
                     totalConvertirEquivalentes = (Parametro * 1055.06) / 1000;
-                    simbolo = "kJ";
+                    simbolo = "kJ equiv. de energía eléctrica";
                     break;
                 case 41: //MegaJoule
                     totalConvertirEquivalentes = ((Parametro * 1055.06) / 1000) / 1000;
-                    simbolo = "MJ";
+                    simbolo = "MJ equiv. de energía eléctrica";
                     break;
                 case 42: //KwH
                     totalConvertirEquivalentes = (Parametro * 293.071) / 1000000;
-                    simbolo = "KwH";
+                    simbolo = "KwH equiv. de energía eléctrica";
                     break;
                 case 43: //Mwh
                     totalConvertirEquivalentes = ((Parametro * 293.071) / 1000000) / 1000;
-                    simbolo = "Mwh";
+                    simbolo = "Mwh equiv. de energía eléctrica";
                     break;
                 case 44: //Kcal
                     totalConvertirEquivalentes = (Parametro / 4.184) * (1055.06 / 1000);
-                    simbolo = "Kcal";
+                    simbolo = "Kcal equiv. de energía eléctrica";
                     break;
                 case 45: //Cal
                     totalConvertirEquivalentes = ((Parametro / 4.184) * (1055.06 / 1000)) * 1000;
-                    simbolo = "Cal";
+                    simbolo = "Cal equiv. de energía eléctrica";
                     break;
                 case 46: //Hp.Hr
                     totalConvertirEquivalentes = Parametro / 2544.5;
-                    simbolo = "Hp.Hr";
+                    simbolo = "Hp.Hr equiv. de energía eléctrica";
                     break;
                 case 47: //PCs
                     totalConvertirEquivalentes = Parametro / ArrayParam.get(1);
@@ -848,6 +849,9 @@ public class EquivalenteFragment extends Fragment {
             convert_units_to_symbol.setText(simbolo);
 
             show_results(root);
+
+            ScrollView mainScrollView = root.findViewById(R.id.mainScrollView);
+            mainScrollView.fullScroll(ScrollView.FOCUS_UP);
 
 
         }
